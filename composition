@@ -1,1 +1,36 @@
+#include <iostream>
+#include <stdlib.h>
+#include <stdio.h>
+using namespace std;
+int main()
+{
+    int n, m, x;
+    cout << "Enter size of the 1st cell\n";
+    cin >> n;
+    cout << "Enter size of the 2nd cell\n";
+    cin >> m;
+    cout << "Enter size of the 3rd cell\n";
+    cin >> x;
+    int a[n][m];
+    int b[m][x];
+    int c[n][x];
+    cout << "Enter elements of 1st massif\n";
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < m; j++)
+            cin >> a[i][j];
+    cout << "Enter elements of 2nd massif\n";
+    for (int i = 0; i < m; i++)
+        for (int j = 0; j < x; j++)
+            cin >> b[i][j];
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < x; j++)
+            c[i][j] = 0;
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < x; j++)
+            for (int z = 0; z < m; z++)
+                c[i][j] = c[i][j] + a[i][z] * b[z][j];
 
+    cout << c[i][j];
+
+    return 0;
+}
