@@ -27,12 +27,10 @@ int main()
             c[i][j] = 0;
     for (int i = 0; i < n; i++)
         for (int j = 0; j < x; j++)
+        {
             for (int z = 0; z < m; z++)
-                c[i][j] = c[i][j] + a[i][z] * b[z][j];
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < m; j++)
+                c[i][j] = a[i][z] * b[z][j] + c[i][j];
             cout << c[i][j];
-    }
+        }
     return 0;
 }
